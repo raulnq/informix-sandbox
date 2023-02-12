@@ -19,7 +19,7 @@ using (var conn = new DB2Connection(connectionString))
 
     conn.Open();
 
-    var reader = await conn.ExecuteReaderAsync("select 1 from systables where tabname = 'animes2'");
+    var reader = await conn.ExecuteReaderAsync("select 1 from systables where tabname = 'animes'");
 
     if (reader.HasRows)
     {
@@ -28,7 +28,7 @@ using (var conn = new DB2Connection(connectionString))
 
     if (!exists)
     {
-        var sql = @"CREATE TABLE animes2
+        var sql = @"CREATE TABLE animes
         (
         id varchar(36) PRIMARY KEY,
         name varchar(255) NOT NULL

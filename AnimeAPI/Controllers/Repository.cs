@@ -15,7 +15,7 @@ public class Repository
     {
         using (var db = new DB2Connection(_connectionString))
         {
-            string sqlQuery = "INSERT INTO animes2 (id, name) VALUES(@Id, @Name)";
+            string sqlQuery = "INSERT INTO animes (id, name) VALUES(@Id, @Name)";
 
             await db.ExecuteAsync(sqlQuery, anime);
         }
@@ -25,7 +25,7 @@ public class Repository
     {
         using (var db = new DB2Connection(_connectionString))
         {
-            string sqlQuery = "SELECT * FROM animes2";
+            string sqlQuery = "SELECT * FROM animes";
 
             return await db.QueryAsync<Anime>(sqlQuery);
         }
